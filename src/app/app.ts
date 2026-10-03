@@ -9,4 +9,16 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('Counter-App');
+
+  count:number=0;
+
+  updateValue(str:string){
+    if(str=='inc'){
+      this.count=this.count+1;
+    }else if(str=='res'){
+      this.count=0;
+    }else{
+      this.count<=0?0:this.count=this.count-1;
+    }
+  }
 }
